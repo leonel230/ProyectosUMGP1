@@ -21,6 +21,10 @@ Usuarios mod;
     private RegistroSecciones ventanasec;
     //JinternalFran para modificaciones
     private ModificacionAlumnos ventanaModAlum;
+    private ModificacionMaestro ventanaModMaes;
+    private ModificacionFacultades ventanaModFacul;
+    private ModificacionCarreras ventanaModCarr;
+    private ModificacionCursos ventanaModcur;
     private ModificacionSedes ventanaModSede;
     private ModificacionAulas ventanaModAula;
     private ModificacionJornadas ventanaModJornada;
@@ -208,9 +212,19 @@ Mantenimientos(Usuarios mod) {
         ModificarAlumno.add(jMenuItem2);
 
         ModificarMaestro.setText("Modificar Maestro");
+        ModificarMaestro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarMaestroActionPerformed(evt);
+            }
+        });
         ModificarAlumno.add(ModificarMaestro);
 
         ModiificarFacultad.setText("Modificar Facultad");
+        ModiificarFacultad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModiificarFacultadActionPerformed(evt);
+            }
+        });
         ModificarAlumno.add(ModiificarFacultad);
 
         ModificarCarrera.setText("Modificar Carrera");
@@ -326,12 +340,12 @@ Mantenimientos(Usuarios mod) {
         // TODO add your handling code here:
         NuevaVentana = new RegistroA();
         jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(RegistroA Alumno)
-        
     }//GEN-LAST:event_RegistroAlumnoActionPerformed
 
     private void ModificarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarCursoActionPerformed
         // TODO add your handling code here:
-
+        ventanaModCarr = new ModificacionCarreras();
+        jDesktopPane1.add(ventanaModCarr);//Codigo para hacer visible JinternalFrame(Modificacion Cursos)
     }//GEN-LAST:event_ModificarCursoActionPerformed
 
     private void SalirProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirProgramaActionPerformed
@@ -364,6 +378,8 @@ Mantenimientos(Usuarios mod) {
 
     private void ModificarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarCarreraActionPerformed
         // TODO add your handling code here:
+        ventanaModCarr = new ModificacionCarreras();
+        jDesktopPane1.add(ventanaModCarr);//Codigo para hacer visible JinternalFrame(Modificacion Carreras)
     }//GEN-LAST:event_ModificarCarreraActionPerformed
 
     private void RegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCursoActionPerformed
@@ -433,6 +449,18 @@ Mantenimientos(Usuarios mod) {
         ventanaModJornada = new ModificacionJornadas();
         jDesktopPane1.add(ventanaModJornada);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void ModificarMaestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarMaestroActionPerformed
+        // TODO add your handling code here:
+        ventanaModMaes = new ModificacionMaestro();
+        jDesktopPane1.add(ventanaModMaes);//Codigo para hacer visible JinternalFrame(Modificacion Maestros)
+    }//GEN-LAST:event_ModificarMaestroActionPerformed
+
+    private void ModiificarFacultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModiificarFacultadActionPerformed
+        // TODO add your handling code here:
+        ventanaModFacul = new ModificacionFacultades();
+        jDesktopPane1.add(ventanaModFacul);//Codigo para hacer visible JinternalFrame(Modificacion Facultades)
+    }//GEN-LAST:event_ModiificarFacultadActionPerformed
 
     /**
      * @param args the command line arguments

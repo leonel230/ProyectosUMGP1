@@ -132,11 +132,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar Maestro"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModificarMaestroActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ModiificarFacultad">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar Facultad"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModiificarFacultadActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ModificarCarrera">
               <Properties>
