@@ -9,6 +9,7 @@ import Modelo.Usuarios;
 public class Mantenimientos extends javax.swing.JFrame {
 Usuarios mod;
 
+    //JinternalFran para registros
     private RegistroA NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
     private RegistroMaestro ventana;
     private RegistroFacultades ventanafac;
@@ -18,7 +19,8 @@ Usuarios mod;
     private RegistroAula ventanaaula;
     private RegistroJornadas ventanajor;
     private RegistroSecciones ventanasec;
-    
+    //JinternalFran para modificaciones
+    private ModificacionAlumnos ventanaModAlum;
    
 
     public Mantenimientos() {
@@ -35,20 +37,17 @@ Mantenimientos(Usuarios mod) {
         if (mod.getId_Tipo() == 1) {
             jMenu1.setVisible(true);
             jMenu3.setVisible(true);
-            jMenu4.setVisible(true);
             jMenu5.setVisible(true);
             ModificarAlumno.setVisible(true);
         } else if (mod.getId_Tipo() == 2) {
             jMenu1.setVisible(true);
             jMenu3.setVisible(true);
-            jMenu4.setVisible(true);
             jMenu5.setVisible(true);
             ModificarAlumno.setVisible(true);
         }
         else if (mod.getId_Tipo() == 3) {
             jMenu1.setVisible(true);
             jMenu3.setVisible(true);
-            jMenu4.setVisible(true);
             jMenu5.setVisible(true);
             ModificarAlumno.setVisible(true);
         }
@@ -82,12 +81,6 @@ Mantenimientos(Usuarios mod) {
         ModiificarFacultad = new javax.swing.JMenuItem();
         ModificarCarrera = new javax.swing.JMenuItem();
         ModificarCurso = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        EliminarAlumno = new javax.swing.JMenuItem();
-        EliminarMaestro = new javax.swing.JMenuItem();
-        EliminarFacultad = new javax.swing.JMenuItem();
-        EliminarCarrera = new javax.swing.JMenuItem();
-        EliminarCurso = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         Asignacion = new javax.swing.JMenuItem();
         EliminarMaestro1 = new javax.swing.JMenuItem();
@@ -199,6 +192,11 @@ Mantenimientos(Usuarios mod) {
         ModificarAlumno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem2.setText("Modificar Alumno");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         ModificarAlumno.add(jMenuItem2);
 
         ModificarMaestro.setText("Modificar Maestro");
@@ -224,37 +222,6 @@ Mantenimientos(Usuarios mod) {
         ModificarAlumno.add(ModificarCurso);
 
         jMenuBar1.add(ModificarAlumno);
-
-        jMenu4.setBackground(new java.awt.Color(51, 255, 204));
-        jMenu4.setText("Eliminar");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        EliminarAlumno.setText("Eliminar Alumno");
-        jMenu4.add(EliminarAlumno);
-
-        EliminarMaestro.setText("Eliminar Maestro");
-        jMenu4.add(EliminarMaestro);
-
-        EliminarFacultad.setText("Eliminar Facultad");
-        jMenu4.add(EliminarFacultad);
-
-        EliminarCarrera.setText("Eliminar Carrera");
-        EliminarCarrera.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarCarreraActionPerformed(evt);
-            }
-        });
-        jMenu4.add(EliminarCarrera);
-
-        EliminarCurso.setText("Eliminar Curso");
-        EliminarCurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarCursoActionPerformed(evt);
-            }
-        });
-        jMenu4.add(EliminarCurso);
-
-        jMenuBar1.add(jMenu4);
 
         jMenu5.setBackground(new java.awt.Color(51, 255, 204));
         jMenu5.setText("Asignacion");
@@ -359,14 +326,6 @@ Mantenimientos(Usuarios mod) {
         // TODO add your handling code here:
     }//GEN-LAST:event_ModificarCarreraActionPerformed
 
-    private void EliminarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCarreraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EliminarCarreraActionPerformed
-
-    private void EliminarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCursoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EliminarCursoActionPerformed
-
     private void RegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCursoActionPerformed
         // TODO add your handling code here:
         ventanacur = new RegistroCursos();
@@ -404,6 +363,12 @@ Mantenimientos(Usuarios mod) {
           ventanaaula = new RegistroAula();
         jDesktopPane1.add(ventanaaula);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        ventanaModAlum = new ModificacionAlumnos();
+        jDesktopPane1.add(ventanaModAlum);//Codigo para hacer visible JinternalFrame(Modificacion Alumnos)
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,12 +408,7 @@ Mantenimientos(Usuarios mod) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Asignacion;
-    private javax.swing.JMenuItem EliminarAlumno;
-    private javax.swing.JMenuItem EliminarCarrera;
-    private javax.swing.JMenuItem EliminarCurso;
-    private javax.swing.JMenuItem EliminarFacultad;
     private javax.swing.JMenuItem EliminarFacultad1;
-    private javax.swing.JMenuItem EliminarMaestro;
     private javax.swing.JMenuItem EliminarMaestro1;
     private javax.swing.JMenu ModificarAlumno;
     private javax.swing.JMenuItem ModificarCarrera;
@@ -465,7 +425,6 @@ Mantenimientos(Usuarios mod) {
     public static javax.swing.JDesktopPane jDesktopPane1;
     public javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
