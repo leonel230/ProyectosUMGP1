@@ -7,7 +7,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;//Conectar a la base de datos MYSQL
 /**
  *
- * @author Tobar Arèvalo
+ * @author Luis Lee
  */
 public class RegistroSedes extends javax.swing.JInternalFrame {
 
