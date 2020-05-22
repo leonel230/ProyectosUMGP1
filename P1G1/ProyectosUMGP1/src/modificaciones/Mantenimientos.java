@@ -2,10 +2,14 @@
  *
  * @author Tobar Arèvalo
  */
+
+
+import Modelo.Usuarios;
+
 public class Mantenimientos extends javax.swing.JFrame {
+Usuarios mod;
 
-
-    private Registro NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
+    private RegistroA NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
     private RegistroMaestro ventana;
     private RegistroFacultades ventanafac;
     private RegistroCarreras ventanacarr;
@@ -23,7 +27,33 @@ public class Mantenimientos extends javax.swing.JFrame {
         this.setExtendedState(Mantenimientos.MAXIMIZED_BOTH);//Se puso una imagen de Fondo en el JDesktopPane
         
     }
+Mantenimientos(Usuarios mod) {
+        initComponents();
+        setLocationRelativeTo(null);
+        this.mod = mod;
 
+        if (mod.getId_Tipo() == 1) {
+            jMenu1.setVisible(true);
+            jMenu3.setVisible(true);
+            jMenu4.setVisible(true);
+            jMenu5.setVisible(true);
+            ModificarAlumno.setVisible(true);
+        } else if (mod.getId_Tipo() == 2) {
+            jMenu1.setVisible(true);
+            jMenu3.setVisible(true);
+            jMenu4.setVisible(true);
+            jMenu5.setVisible(true);
+            ModificarAlumno.setVisible(true);
+        }
+        else if (mod.getId_Tipo() == 3) {
+            jMenu1.setVisible(true);
+            jMenu3.setVisible(true);
+            jMenu4.setVisible(true);
+            jMenu5.setVisible(true);
+            ModificarAlumno.setVisible(true);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -287,8 +317,8 @@ public class Mantenimientos extends javax.swing.JFrame {
     //por Fernando Tobar
     private void RegistroAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroAlumnoActionPerformed
         // TODO add your handling code here:
-        NuevaVentana = new Registro();
-        jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(Registro Alumno)
+        NuevaVentana = new RegistroA();
+        jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(RegistroA Alumno)
         
     }//GEN-LAST:event_RegistroAlumnoActionPerformed
 
@@ -305,13 +335,13 @@ public class Mantenimientos extends javax.swing.JFrame {
     private void RegistroMaestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroMaestroActionPerformed
         // TODO add your handling code here:
         ventana = new RegistroMaestro();
-        jDesktopPane1.add(ventana);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventana);//Codigo para hacer visible JinternalFrame(RegistroA Maestro)
     }//GEN-LAST:event_RegistroMaestroActionPerformed
 
     private void RegistrarFacultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarFacultadActionPerformed
         // TODO add your handling code here:
          ventanafac = new RegistroFacultades();
-        jDesktopPane1.add(ventanafac);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanafac);//Codigo para hacer visible JinternalFrame(RegistroA Maestro)
         
     }//GEN-LAST:event_RegistrarFacultadActionPerformed
 
@@ -322,7 +352,7 @@ public class Mantenimientos extends javax.swing.JFrame {
     private void RegistrarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarCarreraActionPerformed
         // TODO add your handling code here:
         ventanacarr = new RegistroCarreras();
-        jDesktopPane1.add(ventanacarr);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanacarr);//Codigo para hacer visible JinternalFrame(RegistroA Maestro)
     }//GEN-LAST:event_RegistrarCarreraActionPerformed
 
     private void ModificarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarCarreraActionPerformed
@@ -340,7 +370,7 @@ public class Mantenimientos extends javax.swing.JFrame {
     private void RegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCursoActionPerformed
         // TODO add your handling code here:
         ventanacur = new RegistroCursos();
-        jDesktopPane1.add(ventanacur);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanacur);//Codigo para hacer visible JinternalFrame(RegistroA Maestro)
     }//GEN-LAST:event_RegistroCursoActionPerformed
 
     private void EliminarMaestro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarMaestro1ActionPerformed
