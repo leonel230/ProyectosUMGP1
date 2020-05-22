@@ -14,6 +14,11 @@ Usuarios mod;
     private RegistroFacultades ventanafac;
     private RegistroCarreras ventanacarr;
     private RegistroCursos ventanacur;
+    private RegistroSedes ventanasede;
+    private RegistroAula ventanaaula;
+    private RegistroJornadas ventanajor;
+    private RegistroSecciones ventanasec;
+    
    
 
     public Mantenimientos() {
@@ -67,6 +72,10 @@ Mantenimientos(Usuarios mod) {
         RegistrarFacultad = new javax.swing.JMenuItem();
         RegistrarCarrera = new javax.swing.JMenuItem();
         RegistroCurso = new javax.swing.JMenuItem();
+        RegistrarSede = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         ModificarAlumno = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         ModificarMaestro = new javax.swing.JMenuItem();
@@ -150,6 +159,38 @@ Mantenimientos(Usuarios mod) {
             }
         });
         jMenu1.add(RegistroCurso);
+
+        RegistrarSede.setText("Registrar Sede");
+        RegistrarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarSedeActionPerformed(evt);
+            }
+        });
+        jMenu1.add(RegistrarSede);
+
+        jMenuItem1.setText("Registrar Aula");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem3.setText("Registrar Secciones");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Registrar Jornada");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
 
         jMenuBar1.add(jMenu1);
 
@@ -340,6 +381,30 @@ Mantenimientos(Usuarios mod) {
         // TODO add your handling code here:
     }//GEN-LAST:event_AsignacionActionPerformed
 
+    private void RegistrarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarSedeActionPerformed
+        // TODO add your handling code here:
+        ventanasede = new RegistroSedes();
+        jDesktopPane1.add(ventanasede);
+    }//GEN-LAST:event_RegistrarSedeActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+          ventanajor = new RegistroJornadas();
+        jDesktopPane1.add(ventanajor);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+          ventanasec = new RegistroSecciones();
+        jDesktopPane1.add(ventanasec);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+          ventanaaula = new RegistroAula();
+        jDesktopPane1.add(ventanaaula);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,6 +457,7 @@ Mantenimientos(Usuarios mod) {
     private javax.swing.JMenuItem ModiificarFacultad;
     private javax.swing.JMenuItem RegistrarCarrera;
     private javax.swing.JMenuItem RegistrarFacultad;
+    private javax.swing.JMenuItem RegistrarSede;
     private javax.swing.JMenuItem RegistroAlumno;
     private javax.swing.JMenuItem RegistroCurso;
     private javax.swing.JMenuItem RegistroMaestro;
@@ -402,7 +468,10 @@ Mantenimientos(Usuarios mod) {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 
