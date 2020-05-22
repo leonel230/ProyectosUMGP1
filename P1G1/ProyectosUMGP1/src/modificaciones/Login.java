@@ -122,7 +122,7 @@ public class Login extends javax.swing.JFrame {
                 
                 //Mantenimientos frmMenu = new Mantenimientos();
                 //frmMenu.setVisible(true);
-                new Mantenimientos().setVisible(true);
+                
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Datos incorrectos");
