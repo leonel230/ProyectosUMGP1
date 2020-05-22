@@ -21,6 +21,10 @@ Usuarios mod;
     private RegistroSecciones ventanasec;
     //JinternalFran para modificaciones
     private ModificacionAlumnos ventanaModAlum;
+    private ModificacionSedes ventanaModSede;
+    private ModificacionAulas ventanaModAula;
+    private ModificacionJornadas ventanaModJornada;
+    private ModificacionSecciones ventanaModSec;
    
 
     public Mantenimientos() {
@@ -81,6 +85,10 @@ Mantenimientos(Usuarios mod) {
         ModiificarFacultad = new javax.swing.JMenuItem();
         ModificarCarrera = new javax.swing.JMenuItem();
         ModificarCurso = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         Asignacion = new javax.swing.JMenuItem();
         EliminarMaestro1 = new javax.swing.JMenuItem();
@@ -220,6 +228,38 @@ Mantenimientos(Usuarios mod) {
             }
         });
         ModificarAlumno.add(ModificarCurso);
+
+        jMenuItem5.setText("Modificar Sede");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        ModificarAlumno.add(jMenuItem5);
+
+        jMenuItem6.setText("Modificar Aula");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        ModificarAlumno.add(jMenuItem6);
+
+        jMenuItem7.setText("Modificar Seccion");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        ModificarAlumno.add(jMenuItem7);
+
+        jMenuItem8.setText("Modificar Jornadas");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        ModificarAlumno.add(jMenuItem8);
 
         jMenuBar1.add(ModificarAlumno);
 
@@ -370,6 +410,30 @@ Mantenimientos(Usuarios mod) {
         jDesktopPane1.add(ventanaModAlum);//Codigo para hacer visible JinternalFrame(Modificacion Alumnos)
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        ventanaModSede = new ModificacionSedes();
+        jDesktopPane1.add(ventanaModSede);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        ventanaModSec = new ModificacionSecciones();
+        jDesktopPane1.add(ventanaModSec);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        ventanaModAula = new ModificacionAulas();
+        jDesktopPane1.add(ventanaModAula);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        ventanaModJornada = new ModificacionJornadas();
+        jDesktopPane1.add(ventanaModJornada);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -431,6 +495,10 @@ Mantenimientos(Usuarios mod) {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 
