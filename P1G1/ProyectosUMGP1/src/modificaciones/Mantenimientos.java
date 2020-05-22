@@ -2,10 +2,13 @@
  *
  * @author Tobar Arèvalo
  */
+package modificaciones;
+import Modelo.Usuarios;
 public class Mantenimientos extends javax.swing.JFrame {
+    
+    Usuarios mod;
 
-
-    private Registro NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
+    private RegistroAlumno NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
     private RegistroMaestro ventana;
     private RegistroFacultades ventanafac;
     private RegistroCarreras ventanacarr;
@@ -18,7 +21,34 @@ public class Mantenimientos extends javax.swing.JFrame {
         this.setExtendedState(Mantenimientos.MAXIMIZED_BOTH);//Se puso una imagen de Fondo en el JDesktopPane
         
     }
+    
+    Mantenimientos(Usuarios mod) {
+        initComponents();
+        setLocationRelativeTo(null);
+        this.mod = mod;
 
+        if (mod.getId_Tipo() == 1) {
+            menuRegistrar.setVisible(true);
+            menuAsignacion.setVisible(true);
+            menuModificar.setVisible(true);
+            menuEliminar.setVisible(true);
+            menuSalir.setVisible(true);
+        } else if (mod.getId_Tipo() == 2) {
+            menuRegistrar.setVisible(true);
+            menuAsignacion.setVisible(true);
+            menuModificar.setVisible(true);
+            menuEliminar.setVisible(true);
+            menuSalir.setVisible(true);
+        }
+        else if (mod.getId_Tipo() == 3) {
+            menuRegistrar.setVisible(true);
+            menuAsignacion.setVisible(true);
+            menuModificar.setVisible(true);
+            menuEliminar.setVisible(true);
+            menuSalir.setVisible(true);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,29 +61,29 @@ public class Mantenimientos extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuRegistrar = new javax.swing.JMenu();
         RegistroAlumno = new javax.swing.JMenuItem();
         RegistroMaestro = new javax.swing.JMenuItem();
         RegistrarFacultad = new javax.swing.JMenuItem();
         RegistrarCarrera = new javax.swing.JMenuItem();
         RegistroCurso = new javax.swing.JMenuItem();
-        ModificarAlumno = new javax.swing.JMenu();
+        menuModificar = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         ModificarMaestro = new javax.swing.JMenuItem();
         ModiificarFacultad = new javax.swing.JMenuItem();
         ModificarCarrera = new javax.swing.JMenuItem();
         ModificarCurso = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        menuEliminar = new javax.swing.JMenu();
         EliminarAlumno = new javax.swing.JMenuItem();
         EliminarMaestro = new javax.swing.JMenuItem();
         EliminarFacultad = new javax.swing.JMenuItem();
         EliminarCarrera = new javax.swing.JMenuItem();
         EliminarCurso = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        menuAsignacion = new javax.swing.JMenu();
         Asignacion = new javax.swing.JMenuItem();
         EliminarMaestro1 = new javax.swing.JMenuItem();
         EliminarFacultad1 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuSalir = new javax.swing.JMenu();
         SalirPrograma = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,12 +102,12 @@ public class Mantenimientos extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 0));
         jMenuBar1.setForeground(new java.awt.Color(255, 255, 0));
 
-        jMenu1.setBackground(new java.awt.Color(0, 255, 204));
-        jMenu1.setText("Registrar");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        menuRegistrar.setBackground(new java.awt.Color(0, 255, 204));
+        menuRegistrar.setText("Registrar");
+        menuRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                menuRegistrarActionPerformed(evt);
             }
         });
 
@@ -87,7 +117,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 RegistroAlumnoActionPerformed(evt);
             }
         });
-        jMenu1.add(RegistroAlumno);
+        menuRegistrar.add(RegistroAlumno);
 
         RegistroMaestro.setText("Registrar Maestro");
         RegistroMaestro.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +125,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 RegistroMaestroActionPerformed(evt);
             }
         });
-        jMenu1.add(RegistroMaestro);
+        menuRegistrar.add(RegistroMaestro);
 
         RegistrarFacultad.setText("Registrar Facultad");
         RegistrarFacultad.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +133,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 RegistrarFacultadActionPerformed(evt);
             }
         });
-        jMenu1.add(RegistrarFacultad);
+        menuRegistrar.add(RegistrarFacultad);
 
         RegistrarCarrera.setText("Registrar Carrera");
         RegistrarCarrera.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +141,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 RegistrarCarreraActionPerformed(evt);
             }
         });
-        jMenu1.add(RegistrarCarrera);
+        menuRegistrar.add(RegistrarCarrera);
 
         RegistroCurso.setText("Registrar Curso");
         RegistroCurso.addActionListener(new java.awt.event.ActionListener() {
@@ -119,22 +149,22 @@ public class Mantenimientos extends javax.swing.JFrame {
                 RegistroCursoActionPerformed(evt);
             }
         });
-        jMenu1.add(RegistroCurso);
+        menuRegistrar.add(RegistroCurso);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuRegistrar);
 
-        ModificarAlumno.setBackground(new java.awt.Color(51, 255, 204));
-        ModificarAlumno.setText("Modificar");
-        ModificarAlumno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuModificar.setBackground(new java.awt.Color(51, 255, 204));
+        menuModificar.setText("Modificar");
+        menuModificar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem2.setText("Modificar Alumno");
-        ModificarAlumno.add(jMenuItem2);
+        menuModificar.add(jMenuItem2);
 
         ModificarMaestro.setText("Modificar Maestro");
-        ModificarAlumno.add(ModificarMaestro);
+        menuModificar.add(ModificarMaestro);
 
         ModiificarFacultad.setText("Modificar Facultad");
-        ModificarAlumno.add(ModiificarFacultad);
+        menuModificar.add(ModiificarFacultad);
 
         ModificarCarrera.setText("Modificar Carrera");
         ModificarCarrera.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +172,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 ModificarCarreraActionPerformed(evt);
             }
         });
-        ModificarAlumno.add(ModificarCarrera);
+        menuModificar.add(ModificarCarrera);
 
         ModificarCurso.setText("Modificar Curso");
         ModificarCurso.addActionListener(new java.awt.event.ActionListener() {
@@ -150,22 +180,22 @@ public class Mantenimientos extends javax.swing.JFrame {
                 ModificarCursoActionPerformed(evt);
             }
         });
-        ModificarAlumno.add(ModificarCurso);
+        menuModificar.add(ModificarCurso);
 
-        jMenuBar1.add(ModificarAlumno);
+        jMenuBar1.add(menuModificar);
 
-        jMenu4.setBackground(new java.awt.Color(51, 255, 204));
-        jMenu4.setText("Eliminar");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuEliminar.setBackground(new java.awt.Color(51, 255, 204));
+        menuEliminar.setText("Eliminar");
+        menuEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         EliminarAlumno.setText("Eliminar Alumno");
-        jMenu4.add(EliminarAlumno);
+        menuEliminar.add(EliminarAlumno);
 
         EliminarMaestro.setText("Eliminar Maestro");
-        jMenu4.add(EliminarMaestro);
+        menuEliminar.add(EliminarMaestro);
 
         EliminarFacultad.setText("Eliminar Facultad");
-        jMenu4.add(EliminarFacultad);
+        menuEliminar.add(EliminarFacultad);
 
         EliminarCarrera.setText("Eliminar Carrera");
         EliminarCarrera.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +203,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 EliminarCarreraActionPerformed(evt);
             }
         });
-        jMenu4.add(EliminarCarrera);
+        menuEliminar.add(EliminarCarrera);
 
         EliminarCurso.setText("Eliminar Curso");
         EliminarCurso.addActionListener(new java.awt.event.ActionListener() {
@@ -181,13 +211,13 @@ public class Mantenimientos extends javax.swing.JFrame {
                 EliminarCursoActionPerformed(evt);
             }
         });
-        jMenu4.add(EliminarCurso);
+        menuEliminar.add(EliminarCurso);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(menuEliminar);
 
-        jMenu5.setBackground(new java.awt.Color(51, 255, 204));
-        jMenu5.setText("Asignacion");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuAsignacion.setBackground(new java.awt.Color(51, 255, 204));
+        menuAsignacion.setText("Asignacion");
+        menuAsignacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         Asignacion.setText("Asignar Alumno");
         Asignacion.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +225,7 @@ public class Mantenimientos extends javax.swing.JFrame {
                 AsignacionActionPerformed(evt);
             }
         });
-        jMenu5.add(Asignacion);
+        menuAsignacion.add(Asignacion);
 
         EliminarMaestro1.setText("Asignar Maestro");
         EliminarMaestro1.addActionListener(new java.awt.event.ActionListener() {
@@ -203,16 +233,16 @@ public class Mantenimientos extends javax.swing.JFrame {
                 EliminarMaestro1ActionPerformed(evt);
             }
         });
-        jMenu5.add(EliminarMaestro1);
+        menuAsignacion.add(EliminarMaestro1);
 
         EliminarFacultad1.setText("Asignar Nota");
-        jMenu5.add(EliminarFacultad1);
+        menuAsignacion.add(EliminarFacultad1);
 
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(menuAsignacion);
 
-        jMenu3.setForeground(new java.awt.Color(204, 0, 0));
-        jMenu3.setText("Salir");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuSalir.setForeground(new java.awt.Color(204, 0, 0));
+        menuSalir.setText("Salir");
+        menuSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         SalirPrograma.setText("Salir");
         SalirPrograma.addActionListener(new java.awt.event.ActionListener() {
@@ -220,9 +250,9 @@ public class Mantenimientos extends javax.swing.JFrame {
                 SalirProgramaActionPerformed(evt);
             }
         });
-        jMenu3.add(SalirPrograma);
+        menuSalir.add(SalirPrograma);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(menuSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -246,8 +276,8 @@ public class Mantenimientos extends javax.swing.JFrame {
     //por Fernando Tobar
     private void RegistroAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroAlumnoActionPerformed
         // TODO add your handling code here:
-        NuevaVentana = new Registro();
-        jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(Registro Alumno)
+        NuevaVentana = new RegistroAlumno();
+        jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(RegistroAlumno Alumno)
         
     }//GEN-LAST:event_RegistroAlumnoActionPerformed
 
@@ -264,24 +294,24 @@ public class Mantenimientos extends javax.swing.JFrame {
     private void RegistroMaestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroMaestroActionPerformed
         // TODO add your handling code here:
         ventana = new RegistroMaestro();
-        jDesktopPane1.add(ventana);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventana);//Codigo para hacer visible JinternalFrame(RegistroAlumno Maestro)
     }//GEN-LAST:event_RegistroMaestroActionPerformed
 
     private void RegistrarFacultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarFacultadActionPerformed
         // TODO add your handling code here:
          ventanafac = new RegistroFacultades();
-        jDesktopPane1.add(ventanafac);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanafac);//Codigo para hacer visible JinternalFrame(RegistroAlumno Maestro)
         
     }//GEN-LAST:event_RegistrarFacultadActionPerformed
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void menuRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRegistrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_menuRegistrarActionPerformed
 
     private void RegistrarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarCarreraActionPerformed
         // TODO add your handling code here:
         ventanacarr = new RegistroCarreras();
-        jDesktopPane1.add(ventanacarr);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanacarr);//Codigo para hacer visible JinternalFrame(RegistroAlumno Maestro)
     }//GEN-LAST:event_RegistrarCarreraActionPerformed
 
     private void ModificarCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarCarreraActionPerformed
@@ -299,7 +329,7 @@ public class Mantenimientos extends javax.swing.JFrame {
     private void RegistroCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroCursoActionPerformed
         // TODO add your handling code here:
         ventanacur = new RegistroCursos();
-        jDesktopPane1.add(ventanacur);//Codigo para hacer visible JinternalFrame(Registro Maestro)
+        jDesktopPane1.add(ventanacur);//Codigo para hacer visible JinternalFrame(RegistroAlumno Maestro)
     }//GEN-LAST:event_RegistroCursoActionPerformed
 
     private void EliminarMaestro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarMaestro1ActionPerformed
@@ -355,7 +385,6 @@ public class Mantenimientos extends javax.swing.JFrame {
     private javax.swing.JMenuItem EliminarFacultad1;
     private javax.swing.JMenuItem EliminarMaestro;
     private javax.swing.JMenuItem EliminarMaestro1;
-    private javax.swing.JMenu ModificarAlumno;
     private javax.swing.JMenuItem ModificarCarrera;
     private javax.swing.JMenuItem ModificarCurso;
     private javax.swing.JMenuItem ModificarMaestro;
@@ -367,13 +396,14 @@ public class Mantenimientos extends javax.swing.JFrame {
     private javax.swing.JMenuItem RegistroMaestro;
     private javax.swing.JMenuItem SalirPrograma;
     public static javax.swing.JDesktopPane jDesktopPane1;
-    public javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JMenu menuAsignacion;
+    private javax.swing.JMenu menuEliminar;
+    private javax.swing.JMenu menuModificar;
+    public javax.swing.JMenu menuRegistrar;
+    private javax.swing.JMenu menuSalir;
     // End of variables declaration//GEN-END:variables
 
 }
